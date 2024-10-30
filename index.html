@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Page with Navigation and Footer</title>
+  <link rel="stylesheet" href="../css/nfb.css">
+  <style>
+    /* Base styles for the page */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Navigation Bar Styles */
+    nav {
+      background-image:url(../assets/nbf3.png);/* Replace with your image */
+      background-size: 100%; /* Adjust this value to reduce image size */
+      background-repeat: no-repeat; /* Ensures the image doesn't repeat */
+      background-position: center; /* Centers the image */
+      height: 360px; /* Adjust the height of the navigation bar */
+      padding: 20px;
+      position: relative;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: space-around;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-links li {
+      margin: 0 10px;
+    }
+
+    .nav-links a {
+      color: rgb(240, 235, 235);
+      text-decoration: none;
+      padding: 10px 20px;
+      display: block;
+      text-align: center;
+      font-weight: bold;
+      background-color: rgba(239, 176, 176, 0);
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .nav-links a:hover {
+      background-color: rgba(249, 182, 182, 0.959);
+      box-shadow: 0 8px 12px rgba(249, 5, 5, 0.655);
+      transform: translateY(-10px);
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 30px;
+      cursor: pointer;
+      color: rgb(96, 58, 58);
+      position: absolute;
+      right: 20px;
+      top: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background-color: rgba(51, 51, 51, 0.9);
+        top: 50px;
+        right: 0;
+        width: 100%;
+        text-align: right;
+      }
+
+      .nav-links li {
+        margin: 0;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+    }
+
+    /* Content section (Placeholder for body content) */
+    .content {
+      flex: 1; /* Allows the content to grow and push footer down */
+      padding: 20px;
+      text-align: center;
+    }
+
+   
+    .container {
+            display: flex;
+            align-items: center; /* Vertically align image and text */
+            justify-content: flex-start; /* Align them horizontally */
+            border: 1px solid #ccc; /* Optional border for visual clarity */
+            padding: 10px;
+        }
+        img {
+            width: 100px; /* Control image size */
+            margin-right: 15px; /* Space between image and text */
+        }
+        .text {
+            font-size: 16px;
+        }
+
+  </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <ul class="nav-links" style="padding-left: 0px; padding-top: 290px; gap: 75px;">
+    <li><a href="#">   Home   </a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Portfolio</a></li>
+    <li><a href="#">Contact</a></li>
+    <li><a href="#">Donate</a></li>
+  </ul>
+</nav>
+<br>
+<br>
+
+<!-- Content Section (Placeholder) -->
+<h1 style="padding-left: 25px; padding-top: 5px;"><B><a href="" style="text-decoration: none; color: rgba(219, 9, 9, 0.995);
+  font-style:initial; padding-top: 300px; font-size: 45px;">Welcome.</a></B></h1>
+
+
+  <style>
+    .container {
+      width: 1250px;
+      margin: 20px;
+      border: 1px solid #ddd;
+      padding: 10px;
+      position: relative;
+    }
+    
+    .image {
+      width: 250px;
+      height: auto;
+    }
+
+    .text {
+      max-height: 100px; /* Show only part of the text */
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+    }
+
+    .container.expanded .text {
+      max-height: max-content; /* Large enough to show all text */
+    }
+
+    .read-more-btn {
+      display: block;
+      text-align: center;
+      background-color: #eef3f8;
+      color: rgb(181, 129, 6);
+      padding: 10px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+  </style>
+ 
+<!-- Container 1 -->
+<div class="container" id="container-1">
+  <img src="../assets/freepik-5.png" alt="Sample Image 1" class="image" ; style="width: 200px;">
+  <div class="text">
+    <p>
+      With an irrevocable commitment to indigenous book development, anchored in the conviction that books build the nation, the NBF has as its mission the development of a vibrant indigenous book industry in Nigeria. The Foundation adopts a holistic approach to national book development, to ensure that all components of the book chain the author, the publisher, the printer, the bookseller, the librarian, the producer/importer of raw materials for book production, et cetera function maximally, and that the State provides a conducive environment for the book to flourish. 
+    </p>
+  </div>
+  <div class="read-more-btn" onclick="toggleReadMore('container-1')">Read More</div>
+</div>
+
+<!-- Container 2 -->
+<div class="container" id="container-2">
+  <img src="../assets/FREEPIK12.png" alt="Sample Image 2" class="image"; style="width: 200px; padding: 0px;">
+  <div class="text">
+    <p>
+      The Foundation has the following long and short-term objectives: 
+(a) To promote the development of an indigenous book industry.
+(b) To encourage and promote authorship of books for use in all institutions of learning as well as for general use for pleasure and education in its widest possible meaning. 
+(c) To encourage the reading habit among Nigerians and promote through books, ideas and ideals that would enhance the socio-cultural development of the country.
+ (d) To encourage and promote the publication of all types of books as aforesaid and to ensure that the costs to ultimate consumers of such books shall be minimal.
+(e) To encourage and give support to the establishment in institutions of learning at the appropriate levels of courses relevant to book development such as creative writing, printing, publishing, and distribution of books.
+(f) To co-operate with Government agencies and any other organizations, companies, or bodies engaged in the production of paper and other materials required for book development with a view to keeping such paper and other materials readily available and at minimal costs.
+(g) To make research grants to bodies or individuals concerned with book development.
+(h) To establish and publish its own journal, biblio-graphies, directories, annual reports, et cetera.
+ (i) To organize, among other things.
+
+ (i) Lectures, seminars, symposia, conferences.
+workshops and such activities:
+
+ (ii) Books fairs, and
+
+ (iii) Annual or other Periodical conferences for
+the encouragement and promotion of the
+objectives of the foundation.
+
+(j) To serve as a clearing house for information on
+matters about book development in
+Nigeria and set up a statistical database on all
+aspects of book development
+
+(K) To take any other measures by itself or in
+collaboration with Government agencies or 
+organizations, companies, or bodies that will 
+keep the cost of books to the minimum.
+ 
+    </p>
+  </div>
+  <div class="read-more-btn" onclick="toggleReadMore('container-2')">Read More</div>
+</div>
+
+<script>
+  function toggleReadMore(containerId) {
+    const container = document.getElementById(containerId);
+    const btn = container.querySelector('.read-more-btn');
+    
+    // Toggle the expanded class
+    container.classList.toggle('expanded');
+    
+    // Update button text based on the state
+    if (container.classList.contains('expanded')) {
+      btn.textContent = 'Read Less';
+    } else {
+      btn.textContent = 'Read More';
+    }
+  }
+</script>
+
+
+
+  <br>
+  <section>
+    <h2>book memebers</h2>
+    <div class="book-grid">
+        <div class="book-card">
+            <img src="../assets/prof4.png"; style="width: 150px;" alt="Professor Okunna">
+            <p style="text-align: left;">Prof Chinyere Stella Okunna (FNGE, FNIPR, FACCE, NUJ National Media Icon): BA, MA, PhD (Professor of Mass Communication).</p>
+        </div>
+        <div class="book-card">
+        <img src="../" alt="cats"></div><div class="book-card">
+        <h2>biggest cat</h2>
+        <p>gaint cat</p>
+        <a href="https://www.w3schools.com/html/html_css.asp">
+            <img src="../assets/one big cat.jpg" alt="biggy">
+        </a>
+        </div>
+        <div class="book-card">
+            <a href="https://www.google.com/">
+                <img src="../assets/googlelogo_light_color_272x92dp.jpg" alt="google">
+            </a>
+           </div>
+           <div class="book-card">
+            <a href="https://www.canva.com/">
+                <img src="../assets/googlelogo_light_color_272x92dp.jpg" alt="cangol">
+            </a>
+           </div>
+</section>
+<br><br>
+<section>
+  <div class="book-card">
+    <a href="https://www.canva.com/">
+        <img src="../assets/googlelogo_light_color_272x92dp.jpg" alt="cangol">
+    </a>
+   </div>
+</section>
+<br><br>
+<div class="container" style="gap: 100px;">
+  <img src="../assets/logo-hp.png" alt="Sample Image">
+  <div class="text">
+      <p style="max-width: 200px;">This is a sample text placed next to the image. You can adjust the styling as needed.</p>
+  </div>
+  <br>
+  <br>
+  <img src="../assets/logo-hp.png" alt="Sample Image">
+  <div class="text" style="max-width:fit-content">
+      <p style="max-width: 200px;">This is a sample text placed next to the image. You can adjust the styling as needed.</p>
+  </div>
+</div>
+<br>
+<br>
+
+<br>
+
+<div class="flex-container">
+  <!-- First Text Section -->
+  <div class="text-section">
+      <h3>ORGANIZATION OF THE FOUNDATION</h3>
+      <div class="text-content" id="textContent1">
+          <p style="text-align: left;">
+            NBF's operations are generally under the guidance of the Board of Trustees and the National Advisory Council. The Board of Trustees comprises the President of the Foundation (who is the Chairman of the Board) and not more than ten eminent Nigerians of high repute appointed on merit to reflect the rich diversity if talent nationwide in matters pertaining to book development. 
+            The Terms of Reference of the Board of Trustees include: 
+            (a) The general superintendence of the policies, finances, and physical assets of the Foundation. 
+            (b) To hold in trust for the Foundation the Nigerian Book Foundation Fund, in a bank or banks as may be determined by the Board. 
+            (c) To invest any part of the Fund and mobilize, on a continuing basis, additional contributions and gifts from organizations and individuals. 
+            The National Advisory Council offers advice to the Foundation on the Foundation's annual programme and activities and helps to identify projects/activities in which intervention by the Foundation would be desirable, in the interest of indigenous book development, and to prioritize them. It enables the NBF to respond with one voice on behalf of the Nigerian book community as and when necessary.
+            
+          </p>
+      </div>
+      <span class="read-more-btn" id="readMoreBtn1">Read More</span>
+  </div>
+
+  <!-- Second Text Section -->
+  <div class="text-section">
+      <h3>COMMITEE OF MANAGEMENT</h3>
+      <div class="text-content" id="textContent2">
+          <p>
+            A Committee of Management shall consist of the President (as Chairman), Heads of designated Units within the Foundation, and other staff members (if any) appointed ad persona. The Committee of Management shall consider matters related to the day-to-day management of the Foundation, as well as matters referred to it by the Board of Trustees and the National Advisory Council.
+          </p>
+      </div>
+      <span class="read-more-btn" id="readMoreBtn2">Read More</span>
+  </div>
+
+  <!-- Third Text Section -->
+  <div class="text-section">
+      <h3>NBF FUND</h3>
+      <div class="text-content" id="textContent3">
+          <p>
+            The income of the Foundation is derived from donations bequests and gifts from private sources, corporate bodies, subvention from the Federal, State and Local Governments, returns from investments and monies received or obtained from any other sources as may be approved by the Foundation. The Foundation has created the Nigerian Book Foundation Fund (The Fund) into which all receipts are paid. 
+          </p>
+      </div>
+      <span class="read-more-btn" id="readMoreBtn3">Read More</span>
+  </div>
+</div>
+
+<div class="flex-container">
+  <div class="text-section">
+    <h3>GENERAL MEMBERSHIP OF THE FOUNDATION</h3>
+    <div class="text-content" id="textContent4">
+        <p>
+          The Foundation is considering the constitution of a cadre of General Membership of the Foundation. 
+        </p>
+    </div>
+    <span class="read-more-btn" id="readMoreBtn4">Read More</span>
+</div>
+<div class="text-section">
+  <h3>BOARD OF TRUSTEES</h3>
+  <div class="text-content" id="textContent5">
+      <p>
+        1. Professor Chukwuemeka Ike, OFR, FNIM (Chairman).
+        2. Professor Emeritus Ayo Banjo, CON, FNAL. 
+       3. H.R.H Chief Nuhu Bature, Agwan Bajju. 
+       4. Chief Mrs. Oby Nwankwo. 
+       5. Senator Onyeabo C. Obi, Os'oji Nnewi. 
+       6. Mr. J.I. Omoniyi. 
+       7. Mrs. Oluronke O. Orimalade. 
+       8. Mr. E. Akin Thomas. 
+       
+      </p>
+  </div>
+  <span class="read-more-btn" id="readMoreBtn5">Read More</span>
+</div>
+<div class="text-section">
+  <h3>MAJOR ACTIVITIES AND PROJECTS</h3>
+  <div class="text-content" id="textContent6">
+      <p>
+        1. Nigeria International Book Fair 
+        The Annual National Book Week, inaugurated by the NBF in April 1994 and usually held in the second half of April, metamorphosed into the Nigeria International Book Fair (NIBF) in May 2002. The NBF is a founding Trustee of the Nigerian Book Fair Trust (NBFT) which organizes the fair, participating in its activities. 
+        2. Book Data Centre
+         The NBF Book Data Centre was established in 1995 to serve as a data bank on book related matters. The maiden edition of the DIRECTORY OF NIGERIAN BOOK DEVELOPMENT edited by Chukwuemeka Ike and published in 1998, was the first publication of directories of Nigerian published Authors, Publishing Houses, Book Printers, Book selling and Distribution Organizations, and Libraries. Inadequate funding has hampered the work of the centre. 
+        3. Promotion of Reading 
+        Funded by Heinrich- Boll Foundation of Germany, the NBF operated pilot reading promotion projects (1996 and 1997) and a 3- year (1998-2000) programme to promote the reading habit among Nigerians. Operating through three Reading Promotion Units in Ibadan (West), Jos (North), and Ndikelionwu (East), the NBF organized 3-day holistic reading promotion activities in urban and rural centres in 18 States of the Federation between 1998 and 2000. 
+        The NBF handed over the mobile Library set up at Ibadan as part of the programme to Oyo State Library Board in 2002 at the request of the Board, which transformed it into Bodija Community Library, Bodija, Ibadan. 
+        The NBF has the capacity to mount new reading promotion programmes as funds become available.
+        4. Book Aid Nigeria (BAN) Project
+        As a follow up of the NBF/Heinrich Boll Foundation Reading Promotion Programme which expired in December 2000, the NBF lunched a Book Aid Nigeria (BAN) Project aimed at receiving free donations of a wide range of new books for distribution to public, institutional, community, and other libraries, organizations, and (in approved cases) individuals, to facilitate access to books. The first container of imported books for the project came from International Book Bank Inc, Baltimore, Macmillan, Longman Nigeria and University Press also donated books. A 3- year Project with Sabre Foundation, Massachusetts, U.SA will enable the NBF to receive and distribute two consignments of books from the U.S.A annually. A grant from the Education Tax Fund (ETF) facilitated the acquisition of an NBF warehouse for the project. The NBF welcomes more book donations and funds for the purchase of books, to meet the ever-growing demand for books for formal education and life-long education.
+         
+        5. Sourcing and Dissemination of indigenous knowledge
+        Through organized interviews with identified experts (literate and illiterate) in indigenous knowledge, the NBF has sourced hitherto unpublished information, which it transformed into reading materials for the reading public. Seven Igbo language booklets have been produced. Inadequate funds have held back quality publication of the booklets as well as expansion of the scope of the Project to other Nigerian language groups. 
+        6. National Book Distribution Organization 
+        The NBF is playing a catalytic role in attempting to establish a National Book Distribution Organization to meet an established need of the Nigerian book sector. 
+        7. Publications 
+        With funds from Heinrich-Boll Foundation of Germany, the NBF published the following Books in its first decade of existence. MAKING BOOKS READILY AVAILABLE AND AFFORDABLE (edited by Ezenwa-Ohaeto), 1995 CREATING A CONDUCIVE ENVIRONMENT FOR BOOK PUBLISHING (edited by chukwuemeka Ike), 1996.
+        
+        MEETING THE BOOK NEEDS OF THE RURAL FAMILY 
+        (edited by Chukwuemeka Ike). 1997 
+        DIRECTORY OF NIGERIAN BOOK DEVELOPMENT (edited by Chukwuemeka Ike), 1998.
+         THE BOOK IN 21ST CENTURY NIGERIA, AND UNIVERSAL BASIC EDUCATION (edited by Chukwuemeka Ike), 2000 
+        CREATING AND SUSTAINING A READING CULTURE (edited by Chukwuemeka Ike) 2000
+         Academy Press Plc, Lagos, subsidized the cost of printing the DIRECTORY. Funding is required to update the DIRECTORY and publish new books. 
+        
+      </p>
+  </div>
+  <span class="read-more-btn" id="readMoreBtn6">Read More</span>
+</div>
+</div>
+
+<script>
+  // Toggle read more/less for section 1
+  const textContent1 = document.getElementById('textContent1');
+  const readMoreBtn1 = document.getElementById('readMoreBtn1');
+
+  readMoreBtn1.addEventListener('click', () => {
+      textContent1.classList.toggle('show-more');
+
+      if (textContent1.classList.contains('show-more')) {
+          readMoreBtn1.textContent = "Read Less";
+      } else {
+          readMoreBtn1.textContent = "Read More";
+      }
+  });
+
+  // Toggle read more/less for section 2
+  const textContent2 = document.getElementById('textContent2');
+  const readMoreBtn2 = document.getElementById('readMoreBtn2');
+
+  readMoreBtn2.addEventListener('click', () => {
+      textContent2.classList.toggle('show-more');
+
+      if (textContent2.classList.contains('show-more')) {
+          readMoreBtn2.textContent = "Read Less";
+      } else {
+          readMoreBtn2.textContent = "Read More";
+      }
+  });
+
+  // Toggle read more/less for section 3
+  const textContent3 = document.getElementById('textContent3');
+  const readMoreBtn3 = document.getElementById('readMoreBtn3');
+
+  readMoreBtn3.addEventListener('click', () => {
+      textContent3.classList.toggle('show-more');
+
+      if (textContent3.classList.contains('show-more')) {
+          readMoreBtn3.textContent = "Read Less";
+      } else {
+          readMoreBtn3.textContent = "Read More";
+      }
+  });
+  
+  // Toggle read more/less for section 4
+  const textContent4 = document.getElementById('textContent4');
+  const readMoreBtn4 = document.getElementById('readMoreBtn4');
+
+  readMoreBtn4.addEventListener('click', () => {
+      textContent4.classList.toggle('show-more');
+
+      if (textContent4.classList.contains('show-more')) {
+          readMoreBtn4.textContent = "Read Less";
+      } else {
+          readMoreBtn4.textContent = "Read More";
+      }
+  });
+
+ // Toggle read more/less for section 5
+ const textContent5 = document.getElementById('textContent5');
+  const readMoreBtn5 = document.getElementById('readMoreBtn5');
+
+  readMoreBtn5.addEventListener('click', () => {
+      textContent5.classList.toggle('show-more');
+
+      if (textContent5.classList.contains('show-more')) {
+          readMoreBtn5.textContent = "Read Less";
+      } else {
+          readMoreBtn5.textContent = "Read More";
+      }
+  });
+
+   // Toggle read more/less for section 6
+   const textContent6 = document.getElementById('textContent6');
+  const readMoreBtn6 = document.getElementById('readMoreBtn6');
+
+  readMoreBtn6.addEventListener('click', () => {
+      textContent6.classList.toggle('show-more');
+
+      if (textContent6.classList.contains('show-more')) {
+          readMoreBtn6.textContent = "Read Less";
+      } else {
+          readMoreBtn6.textContent = "Read More";
+      }
+  });
+</script>
+<footer class="footer">
+  <div class="footer-container">
+      <p>&copy; 2024 Your Company. All rights reserved.</p>
+      <ul class="footer-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Contact Us</a></li>
+      </ul>
+  </div>
+</footer>
+</body>
+</html>
